@@ -10,6 +10,9 @@ APPS    = range2list fillout toid toname par xptest filter lookup
 
 CFLAGS  = @@CFLAGS## 
 
+LNAME   = HTMv2
+L 		= ./lib$(LNAME).a
+
 #
 # Should not have -O3 with debug
 # -DHAVE_BITLIST
@@ -40,7 +43,8 @@ OBJECTS = \
 #  ${OBJ}/SpatialConvex.o 
 #   ${OBJ}/BitList.o
 
-all: intersect  filter
+#all: intersect  filter $(L) share install
+all: $(L) share install
 # example
 
 example: ${OBJ}/example.o ${OBJECTS}
@@ -181,6 +185,16 @@ cc_aux.o: cc_aux.c
 
 cc_intersect.o: cc_intersect.c
 	cc -c cc_intersect.c
+
+$(L): $(OBJECTS) $(INCDIR)
+	ar crv $(L) $(OBJECTS)
+
+share:
+	$(CC) -shared -fPIC -o ./lib$(LNAME).so $(OBJECTS)
+
+install:
+	ranlib $(L)
+	mv $(L) ./lib$(LNAME).so ./lib
 
 clean:
 	rm -f $(OBJECTS) ${OBJ}/hello.o  $(OBJ)/intersect.o $(OBJ)/test1.o $(OBJ)/fin.o 

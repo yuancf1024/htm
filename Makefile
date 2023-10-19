@@ -10,6 +10,9 @@ APPS    = range2list fillout toid toname par xptest filter lookup
 
 CFLAGS  = -c -g -Wall -I${INCDIR} -D_BOOL_EXISTS -D__unix -UDIAGNOSE 
 
+LNAME   = HTMv2
+L 		= ./lib$(LNAME).a
+
 #
 # Should not have -O3 with debug
 # -DHAVE_BITLIST
@@ -40,7 +43,8 @@ OBJECTS = \
 #  ${OBJ}/SpatialConvex.o 
 #   ${OBJ}/BitList.o
 
-all: intersect  filter
+#all: intersect  filter $(L) share install
+all: $(L) share install
 # example
 
 example: ${OBJ}/example.o ${OBJECTS}
@@ -104,16 +108,14 @@ vis:
 	echo "C 80 20 30" > ${DATA}/h1
 	./intersect -varlength 20 ${TEST}/testInputIntersect >> ${DATA}/h1
 
-# 头文件fstream.h 缺失
-#xptest: ${OBJ}/xptest.o ${OBJECTS}
-#	$(CC) -g -o $@  ${OBJ}/xptest.o ${OBJECTS}
+xptest: ${OBJ}/xptest.o ${OBJECTS}
+	$(CC) -g -o $@  ${OBJ}/xptest.o ${OBJECTS}
 
 ${OBJ}/lookup.o: app/lookup.cpp
 	$(CC) $(CFLAGS) app/lookup.cpp -o $@
 
-# 已废弃
-#test1: ${OBJ}/test1.o ${OBJECTS}
-#	$(CC) -g -o $@  ${OBJ}/test1.o ${OBJECTS}
+test1: ${OBJ}/test1.o ${OBJECTS}
+	$(CC) -g -o $@  ${OBJ}/test1.o ${OBJECTS}
 
 ${OBJ}/xptest.o: app/xptest.cpp
 	$(CC) $(CFLAGS) app/xptest.cpp -o $@
@@ -183,6 +185,16 @@ cc_aux.o: cc_aux.c
 
 cc_intersect.o: cc_intersect.c
 	cc -c cc_intersect.c
+
+$(L): $(OBJECTS) $(INCDIR)
+	ar crv $(L) $(OBJECTS)
+
+share:
+	$(CC) -shared -fPIC -o ./lib$(LNAME).so $(OBJECTS)
+
+install:
+	ranlib $(L)
+	mv $(L) ./lib$(LNAME).so ./lib
 
 clean:
 	rm -f $(OBJECTS) ${OBJ}/hello.o  $(OBJ)/intersect.o $(OBJ)/test1.o $(OBJ)/fin.o 
