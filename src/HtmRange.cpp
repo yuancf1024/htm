@@ -1,5 +1,6 @@
 #include <iostream> // std::cout
 #include <iomanip>  // setw()
+#include <cstring>
 #include <HtmRange.h>
 
 #ifdef _WIN32
