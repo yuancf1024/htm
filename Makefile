@@ -6,7 +6,7 @@ SRC     = trcomp.cpp
 SHELL   = /bin/csh
 APPS    = range2list fillout toid toname par xptest filter lookup
 
-CFLAGS  = -Wc++11-compat-deprecated-writable-strings -ferror-limit=2 -c -g -Wall -I${INCDIR} -D_BOOL_EXISTS -D__macosx -UDIAGNOSE 
+CFLAGS  = -c -g -Wall -I${INCDIR} -D_BOOL_EXISTS -D__unix -UDIAGNOSE 
 
 #
 # Should not have -O3 with debug
