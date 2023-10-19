@@ -133,58 +133,58 @@ ${OBJ}/sqlExample.o: app/sqlExample.cpp
 	$(CC) $(CFLAGS) app/sqlExample.cpp -o $@
 
 ${OBJ}/SpatialIndex.o: src/SpatialIndex.cpp
-	$(CC) $(CFLAGS) src/SpatialIndex.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialIndex.cpp -o $@
 
 ${OBJ}/SpatialConstraint.o: src/SpatialConstraint.cpp
-	$(CC) $(CFLAGS) src/SpatialConstraint.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialConstraint.cpp -o $@
 
 ${OBJ}/sqlInterface.o: src/sqlInterface.cpp
-	$(CC) $(CFLAGS) src/sqlInterface.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/sqlInterface.cpp -o $@
 
 ${OBJ}/SpatialVector.o: src/SpatialVector.cpp
-	$(CC) $(CFLAGS) src/SpatialVector.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialVector.cpp -o $@
 
 ${OBJ}/SpatialInterface.o: src/SpatialInterface.cpp
-	$(CC) $(CFLAGS) src/SpatialInterface.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialInterface.cpp -o $@
 
 ${OBJ}/SpatialEdge.o: src/SpatialEdge.cpp
-	$(CC) $(CFLAGS) src/SpatialEdge.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialEdge.cpp -o $@
 
 ${OBJ}/SpatialException.o: src/SpatialException.cpp
-	$(CC) $(CFLAGS) src/SpatialException.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialException.cpp -o $@
 
 ${OBJ}/SpatialDomain.o: src/SpatialDomain.cpp
-	$(CC) $(CFLAGS) src/SpatialDomain.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialDomain.cpp -o $@
 
 ${OBJ}/SpatialConvex.o: src/SpatialConvex.cpp
-	$(CC) $(CFLAGS) src/SpatialConvex.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SpatialConvex.cpp -o $@
 
 ${OBJ}/RangeConvex.o: src/RangeConvex.cpp
-	$(CC) $(CFLAGS) src/RangeConvex.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/RangeConvex.cpp -o $@
 
 ${OBJ}/Htmio.o: src/Htmio.cpp
-	$(CC) $(CFLAGS) src/Htmio.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/Htmio.cpp -o $@
 
 ${OBJ}/SkipListElement.o: src/SkipListElement.cpp
-	$(CC) $(CFLAGS) src/SkipListElement.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SkipListElement.cpp -o $@
 
 ${OBJ}/SkipList.o: src/SkipList.cpp
-	$(CC) $(CFLAGS) src/SkipList.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/SkipList.cpp -o $@
 
 ${OBJ}/HtmRange.o: src/HtmRange.cpp
-	$(CC) $(CFLAGS) src/HtmRange.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/HtmRange.cpp -o $@
 
 ${OBJ}/HtmRangeIterator.o: src/HtmRangeIterator.cpp
-	$(CC) $(CFLAGS) src/HtmRangeIterator.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/HtmRangeIterator.cpp -o $@
 
 ${OBJ}/XXX.o: src/XXX.cpp
-	$(CC) $(CFLAGS) src/XXX.cpp -o $@
+	$(CC) $(CFLAGS) -fPIC src/XXX.cpp -o $@
 
 cc_aux.o: cc_aux.c
-	cc -c $(CFLAGS) cc_aux.c
+	cc -c $(CFLAGS) -fPIC cc_aux.c
 
 cc_intersect.o: cc_intersect.c
-	cc -c cc_intersect.c
+	cc -c -fPIC cc_intersect.c
 
 $(L): $(OBJECTS) $(INCDIR)
 	ar crv $(L) $(OBJECTS)
