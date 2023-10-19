@@ -8,7 +8,7 @@ SHELL   = /bin/csh
 TEST    = ./tests
 APPS    = range2list fillout toid toname par xptest filter lookup
 
-CFLAGS  = @@CFLAGS## 
+CFLAGS  = -c -g -Wall -I${INCDIR} -D_BOOL_EXISTS -D__unix -UDIAGNOSE 
 
 #
 # Should not have -O3 with debug
@@ -88,21 +88,21 @@ filter.o: filter.cpp
 
 testrun:
 	make -f Makefile intersect
-	./intersect  20 ${TEST}/testInputIntersect > ${DATA}/tmp1.out
-	diff ${DATA}/tmp1.out ${DATA}/correctOutputIntersect
-	./intersect -varlength 20 ${TEST}/testInputIntersect > ${DATA}/tmp2.out 
-	diff ${DATA}/tmp2.out ${DATA}/correctVarout
-	./intersect -varlength 20 ${TEST}/testTiny > ${DATA}/tmp3.out
-	diff ${DATA}/tmp3.out ${DATA}/correctTinyVarout
-	./intersect  20 ${TEST}/testTiny > ${DATA}/tmp4.out
-	diff ${DATA}/tmp4.out ${DATA}/correctTinyOut
+	./intersect  20 ${TEST}/testInputIntersect > ${DATA}/tmp.out
+	diff ${DATA}/tmp.out ${DATA}/correctOutputIntersect
+	./intersect -varlength 20 ${TEST}/testInputIntersect > ${DATA}/tmp.out 
+	diff ${DATA}/tmp.out ${DATA}/correctVarout
+	./intersect -varlength 20 ${TEST}/testTiny > ${DATA}/tmp.out
+	diff ${DATA}/tmp.out ${DATA}/correctTinyVarout
+	./intersect  20 ${TEST}/testTiny > ${DATA}/tmp.out
+	diff ${DATA}/tmp.out ${DATA}/correctTinyOut
 testcompress:
 	make -f Makefile intersect filter
-	./intersect 20 ${TEST}/testInputIntersect | ./filter 1 
-	./intersect -nranges 1 20 ${TEST}/testInputIntersect
+	./intersect 20 testInputIntersect | filter 1 
+	./intersect -nranges 1 20 testInputIntersect
 vis:
-	echo "C 80 20 30" > ${DATA}/h1
-	./intersect -varlength 20 ${TEST}/testInputIntersect >> ${DATA}/h1
+	echo "C 80 20 30" > /tmp/h1
+	./intersect -varlength 20 testInputIntersect >> /tmp/h1
 
 xptest: ${OBJ}/xptest.o ${OBJECTS}
 	$(CC) -g -o $@  ${OBJ}/xptest.o ${OBJECTS}

@@ -1,9 +1,11 @@
 CC      = c++
 C       = cc
+DATA    = ./data
 INCDIR  = ./include
 OBJ     = ./unix
 SRC     = trcomp.cpp
 SHELL   = /bin/csh
+TEST    = ./tests
 APPS    = range2list fillout toid toname par xptest filter lookup
 
 CFLAGS  = -c -g -Wall -I${INCDIR} -D_BOOL_EXISTS -D__unix -UDIAGNOSE 
@@ -86,30 +88,32 @@ filter.o: filter.cpp
 
 testrun:
 	make -f Makefile intersect
-	./intersect  20 testInputIntersect > tmp.out
-	diff tmp.out correctOutputIntersect
-	./intersect -varlength 20 testInputIntersect > tmp.out 
-	diff tmp.out correctVarout
-	./intersect -varlength 20 testTiny > tmp.out
-	diff tmp.out correctTinyVarout
-	./intersect  20 testTiny > tmp.out
-	diff tmp.out correctTinyOut
+	./intersect  20 ${TEST}/testInputIntersect > ${DATA}/tmp1.out
+	diff ${DATA}/tmp1.out ${DATA}/correctOutputIntersect
+	./intersect -varlength 20 ${TEST}/testInputIntersect > ${DATA}/tmp2.out 
+	diff ${DATA}/tmp2.out ${DATA}/correctVarout
+	./intersect -varlength 20 ${TEST}/testTiny > ${DATA}/tmp3.out
+	diff ${DATA}/tmp3.out ${DATA}/correctTinyVarout
+	./intersect  20 ${TEST}/testTiny > ${DATA}/tmp4.out
+	diff ${DATA}/tmp4.out ${DATA}/correctTinyOut
 testcompress:
 	make -f Makefile intersect filter
-	./intersect 20 testInputIntersect | filter 1 
-	./intersect -nranges 1 20 testInputIntersect
+	./intersect 20 ${TEST}/testInputIntersect | ./filter 1 
+	./intersect -nranges 1 20 ${TEST}/testInputIntersect
 vis:
-	echo "C 80 20 30" > /tmp/h1
-	./intersect -varlength 20 testInputIntersect >> /tmp/h1
+	echo "C 80 20 30" > ${DATA}/h1
+	./intersect -varlength 20 ${TEST}/testInputIntersect >> ${DATA}/h1
 
-xptest: ${OBJ}/xptest.o ${OBJECTS}
-	$(CC) -g -o $@  ${OBJ}/xptest.o ${OBJECTS}
+# 头文件fstream.h 缺失
+#xptest: ${OBJ}/xptest.o ${OBJECTS}
+#	$(CC) -g -o $@  ${OBJ}/xptest.o ${OBJECTS}
 
 ${OBJ}/lookup.o: app/lookup.cpp
 	$(CC) $(CFLAGS) app/lookup.cpp -o $@
 
-test1: ${OBJ}/test1.o ${OBJECTS}
-	$(CC) -g -o $@  ${OBJ}/test1.o ${OBJECTS}
+# 已废弃
+#test1: ${OBJ}/test1.o ${OBJECTS}
+#	$(CC) -g -o $@  ${OBJ}/test1.o ${OBJECTS}
 
 ${OBJ}/xptest.o: app/xptest.cpp
 	$(CC) $(CFLAGS) app/xptest.cpp -o $@
