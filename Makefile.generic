@@ -44,7 +44,7 @@ OBJECTS = \
 #   ${OBJ}/BitList.o
 
 #all: intersect  filter $(L) share install
-all: $(L) share install
+all: $(L) share install intersect  filter
 # example
 
 example: ${OBJ}/example.o ${OBJECTS}
