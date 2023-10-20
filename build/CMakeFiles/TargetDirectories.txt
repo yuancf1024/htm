@@ -1,0 +1,3 @@
+/home/chris/2023Work/htm/build/CMakeFiles/SpatialIndex.dir
+/home/chris/2023Work/htm/build/CMakeFiles/edit_cache.dir
+/home/chris/2023Work/htm/build/CMakeFiles/rebuild_cache.dir

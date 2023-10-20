@@ -1,0 +1,72 @@
+[
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/HtmRange.cpp.o -c /home/chris/2023Work/htm/src/HtmRange.cpp",
+  "file": "/home/chris/2023Work/htm/src/HtmRange.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/HtmRangeIterator.cpp.o -c /home/chris/2023Work/htm/src/HtmRangeIterator.cpp",
+  "file": "/home/chris/2023Work/htm/src/HtmRangeIterator.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/Htmio.cpp.o -c /home/chris/2023Work/htm/src/Htmio.cpp",
+  "file": "/home/chris/2023Work/htm/src/Htmio.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/RangeConvex.cpp.o -c /home/chris/2023Work/htm/src/RangeConvex.cpp",
+  "file": "/home/chris/2023Work/htm/src/RangeConvex.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SkipList.cpp.o -c /home/chris/2023Work/htm/src/SkipList.cpp",
+  "file": "/home/chris/2023Work/htm/src/SkipList.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SkipListElement.cpp.o -c /home/chris/2023Work/htm/src/SkipListElement.cpp",
+  "file": "/home/chris/2023Work/htm/src/SkipListElement.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialConstraint.cpp.o -c /home/chris/2023Work/htm/src/SpatialConstraint.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialConstraint.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialDomain.cpp.o -c /home/chris/2023Work/htm/src/SpatialDomain.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialDomain.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialEdge.cpp.o -c /home/chris/2023Work/htm/src/SpatialEdge.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialEdge.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialException.cpp.o -c /home/chris/2023Work/htm/src/SpatialException.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialException.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialIndex.cpp.o -c /home/chris/2023Work/htm/src/SpatialIndex.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialIndex.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialInterface.cpp.o -c /home/chris/2023Work/htm/src/SpatialInterface.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialInterface.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/SpatialVector.cpp.o -c /home/chris/2023Work/htm/src/SpatialVector.cpp",
+  "file": "/home/chris/2023Work/htm/src/SpatialVector.cpp"
+},
+{
+  "directory": "/home/chris/2023Work/htm/build",
+  "command": "/usr/bin/g++ -DLINKAGE=\"\" -I/home/chris/2023Work/htm/include -g -fPIC -std=gnu++11 -o CMakeFiles/SpatialIndex.dir/src/sqlInterface.cpp.o -c /home/chris/2023Work/htm/src/sqlInterface.cpp",
+  "file": "/home/chris/2023Work/htm/src/sqlInterface.cpp"
+}
+]
