@@ -1,8 +1,9 @@
 # --- Macros ----------------------------------------------------------
 
 CCXX	=	g++
+C		=   gcc
 LD		=	g++
-INCLUDE =	-i../include
+INCLUDE =	-I../include
 CCFLAGS =	${INCLUDE} -O2 -DLINKAGE= -fPIC
 ARFLAGS =	-rlcs
 CP		=	cp
@@ -52,7 +53,7 @@ tidy :
 clean : tidy
 	- cd ../lib; ${RM} ${LIBNAME}.*; rm -rf Templates.DB
 	- cd ../include; ${RM}
-	- cd ../doc/www; ${RM}
+	#- cd ../doc/www; ${RM}
 
 # --- Suffix Rules----------------------------------------------------------
 
@@ -60,7 +61,7 @@ clean : tidy
 # define the Rules.
 
 .SUFFIXES:
-.SUFFIXES: .o .cpp
+.SUFFIXES: .o .cpp .c
 
 # Compiling C++ code. The command lines are so long as to be useless.
 # Use 'sxmake -terse' to suppress the echo of the compile command.
@@ -68,3 +69,7 @@ clean : tidy
 .cpp.o:
 	@ echo compiling $<
 	${CCXX} -c ${CCFLAGS} $<
+
+.c.o:
+	@ echo compiling $<
+	${C} -c ${CCFLAGS} $<
